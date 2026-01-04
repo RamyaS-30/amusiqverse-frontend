@@ -24,6 +24,7 @@ export default function RecentlyPlayed() {
         const title = isTrack ? item.track_title : item.podcast_title;
         const subtitle = isTrack ? item.track_artist : item.podcast_description;
         const audioUrl = isTrack ? item.track_audio : item.podcast_audio;
+        const coverUrl = isTrack ? item.track_cover : item.podcast_cover;
         const id = isTrack ? item.track_id : item.podcast_id;
         const lastPosition = item.last_position || 0;
 
@@ -44,6 +45,7 @@ export default function RecentlyPlayed() {
                 playTrack({
                   id,
                   audio_url: audioUrl,
+                  cover_url: coverUrl,
                   title,
                   last_position: lastPosition,
                   type: isTrack ? "track" : "podcast",
